@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
 import React from 'react'
 import Screen from '../components/Screen';
+import AppText from '../components/AppText';
 
 export default function SettingsScreen() {
   return (
-    <Screen></Screen>
+    <Screen>
+      <AppText>Hi</AppText>
+    </Screen>
   )
 }
 

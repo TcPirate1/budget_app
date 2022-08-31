@@ -1,12 +1,13 @@
 import { StyleSheet, View } from 'react-native'
 import React from 'react'
+import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 
 export default function LoginScreen() {
   return (
-    <View>
+    <Screen>
       <AppText>LoginScreen</AppText>
-    </View>
+    </Screen>
   )
 }
 
