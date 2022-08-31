@@ -1,4 +1,4 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React from 'react'
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
@@ -6,7 +6,7 @@ import AppText from '../components/AppText';
 export default function SettingsScreen() {
   return (
     <Screen>
-      <AppText>Hi</AppText>
+      <AppText>Delete Account</AppText>
     </Screen>
   )
 }
