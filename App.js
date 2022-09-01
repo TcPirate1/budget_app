@@ -21,7 +21,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="WeeklyIncome" component={WeeklyIncome} />
-        <Stack.Screen name="WeeklyIncome" component={WeeklyPayment} />
+        <Stack.Screen name="WeeklyPayment" component={WeeklyPayment} />
         <Stack.Screen name="SavingScreen" component={SavingScreen} />
         <Stack.Screen name="WeeklyBudgetCalc" component={WeeklyBudgetCalc} />
         <Stack.Screen name="Main" component={Main} />

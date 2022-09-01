@@ -10,8 +10,9 @@ export default function WeeklyIncome() {
     return (
     <Screen>
         <AppText>Weekly Income</AppText>
+        <AppButton/>
         <AppButton title={'Next'} onPress={()=>navigation.navigate("WeeklyPayment")}/>
-      </Screen>
+    </Screen>
   )
 }
 
