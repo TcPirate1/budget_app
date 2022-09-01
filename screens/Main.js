@@ -8,7 +8,7 @@ export default function Main() {
     return (
     <PaperProvider>
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='' screenOptions={{headerTitleAlign:'center'}}>
+      <Tab.Navigator initialRouteName='' screenOptions={{headerTitleAlign:'center'}} shifting={true}>
       <Tab.Screen name="Groceries" component={WelcomeScreen} />
         <Tab.Screen name="Transport" component={LoginScreen} />
         <Tab.Screen name="Others" component={SettingsScreen} />
