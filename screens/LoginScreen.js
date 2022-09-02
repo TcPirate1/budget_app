@@ -2,14 +2,21 @@ import { StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
+import AppTextInput from '../components/AppTextInput';
 import AppButton from '../components/AppButton';
+import LoginButton from '../components/LoginButton';
+import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
+  const navigation = useNavigation();
   return (
     <Screen>
-      <AppText>LoginScreen</AppText>
-      <AppButton title={'Login'}></AppButton>
-      <AppButton title={'Register'}></AppButton>
+      <AppText>Login with your email</AppText>
+      <AppText style={{marginBottom:"10%"}}>fill the field and click Register</AppText>
+      <AppTextInput placeholder={'Email'}></AppTextInput>
+      <AppTextInput placeholder={'Password'} secureTextEntry></AppTextInput>
+      <LoginButton title={'Login'} onPress={()=>navigation.navigate("Welcome")}/>
+      <AppButton title={'Register'}/>
     </Screen>
   )
 }

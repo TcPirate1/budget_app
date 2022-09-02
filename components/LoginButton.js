@@ -3,10 +3,10 @@ import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 
-function AppButton({ title, onPress, style }) {
+function LoginButton({ title, onPress, style }) {
   return (
     <TouchableOpacity
-      style={[styles.button, style]}
+      style={[styles.login, style]}
       onPress={onPress}
     >
       <Text style={styles.text}>{title}</Text>
@@ -15,16 +15,15 @@ function AppButton({ title, onPress, style }) {
 }
 
 const styles = StyleSheet.create({
-  button: {
-    backgroundColor: colors.primary,
-    borderRadius: 25,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf:"center",
-    padding: 15,
-    width: "50%",
-    marginVertical: "10%",
-  },
+    login: {
+        borderRadius: 25,
+        backgroundColor: colors.lightblue,
+        width: "50%",
+        marginTop: "8%",
+        alignItems: "center",
+        alignSelf: "center",
+        padding: 15,
+      },
   text: {
     color: colors.white,
     fontSize: 18,
@@ -33,4 +32,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppButton;
+export default LoginButton;

@@ -7,4 +7,6 @@ export default {
   light: "#f8f4f4",
   dark: "#0c0c0c",
   danger: "#ff5252",
+  purple: "#ff00d0",
+  lightblue: "#428df5",
 };

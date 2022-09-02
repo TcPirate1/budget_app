@@ -3,6 +3,7 @@ import React from 'react'
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppButton from '../components/AppButton';
+import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WeeklyIncome() {
@@ -10,8 +11,8 @@ export default function WeeklyIncome() {
     return (
     <Screen>
         <AppText>Weekly Income</AppText>
-        <AppButton/>
-        <AppButton title={'Next'} onPress={()=>navigation.navigate("WeeklyPayment")}/>
+        <AppButton title={'Add'} onPress={()=>console.log("Button will add")}/>
+        <NextButton title={'Next'} onPress={()=>navigation.navigate("WeeklyPayment")}/>
     </Screen>
   )
 }
