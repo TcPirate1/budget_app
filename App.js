@@ -17,7 +17,7 @@ export default function App() {
   return (
     <PaperProvider>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Welcome' screenOptions={{headerTitleAlign:'center'}}>
+      <Stack.Navigator initialRouteName='Login' screenOptions={{headerTitleAlign:'center'}}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="WeeklyIncome" component={WeeklyIncome} />
