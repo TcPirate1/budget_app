@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, SafeAreaView } from 'react-native'
 import React from 'react'
 
 export default function Groceries() {
   return (
-    <View>
-      <Text>groceries</Text>
-    </View>
+    <SafeAreaView>
+        <FlatList data={[{title:'groceries'}]}
+        renderItem={({item})=><Text style={item.title}></Text>}></FlatList>
+    </SafeAreaView>
   )
 }
 

@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
         <AppText>Welcome!</AppText>
         <AppText>Enter some basic information to get started.</AppText>
         </Screen>
-        <Screen style={{maxHeight:"30%",height: "100%"}}>
+        <Screen style={{maxHeight:"50%",height: "100%"}}>
         <NextButton title={'Next'} onPress={()=>navigation.navigate("WeeklyIncome")}/>
         </Screen>
       </Screen>
