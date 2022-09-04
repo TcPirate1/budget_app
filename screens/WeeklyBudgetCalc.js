@@ -8,7 +8,7 @@ export default function WeeklyBudgetCalc() {
     return (
     <View>
       <Text>WeeklyBudgetCalc</Text>
-      <AppButton title={'Next'} onPress={()=>navigation.navigate("Main")}/>
+      <AppButton title={'Next'} onPress={()=>navigation.navigate("Main Page")}/>
     </View>
   )
 }

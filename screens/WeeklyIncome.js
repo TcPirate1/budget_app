@@ -12,14 +12,13 @@ export default function WeeklyIncome() {
     return (
     <Screen style={{flex:1}}>
       <Screen>
-        <AppText>Weekly Income</AppText>
         <AppText>Enter your income:</AppText>
         <AppTextInput placeholder={'$'}/>
         <AppButton title={'Add'} onPress={()=>console.log("Button will add")}/>
-        <Screen style={{height:'60%'}}>
-        <NextButton title={'Next'} onPress={()=>navigation.navigate("WeeklyPayment")}/>
-        </Screen>
       </Screen>
+        <Screen>
+        <NextButton title={'Next'} onPress={()=>navigation.navigate("Weekly Payment")}/>
+        </Screen>
     </Screen>
   )
 }

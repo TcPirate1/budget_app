@@ -20,11 +20,11 @@ export default function App() {
       <Stack.Navigator initialRouteName='Login' screenOptions={{headerTitleAlign:'center'}}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
-        <Stack.Screen name="WeeklyIncome" component={WeeklyIncome} />
-        <Stack.Screen name="WeeklyPayment" component={WeeklyPayment} />
-        <Stack.Screen name="SavingScreen" component={SavingScreen} />
-        <Stack.Screen name="WeeklyBudgetCalc" component={WeeklyBudgetCalc} />
-        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Weekly Income" component={WeeklyIncome} />
+        <Stack.Screen name="Weekly Payment" component={WeeklyPayment} />
+        <Stack.Screen name="Saving Screen" component={SavingScreen} />
+        <Stack.Screen name="Budget Calculator" component={WeeklyBudgetCalc} />
+        <Stack.Screen name="Main Page" component={Main} />
         {/* <Stack.Screen name="Settings" component={SettingsScreen} /> */}
       </Stack.Navigator>
       <StatusBar style='auto'/>

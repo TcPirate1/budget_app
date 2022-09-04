@@ -9,12 +9,12 @@ export default function WelcomeScreen() {
   const navigation = useNavigation();
     return (
       <Screen style={{flex:1}}>
-        <Screen>
+        <Screen style={{justifyContent:'center'}}>
         <AppText>Welcome!</AppText>
         <AppText>Enter some basic information to get started.</AppText>
         </Screen>
-        <Screen style={{maxHeight:"50%",height: "100%"}}>
-        <NextButton title={'Next'} onPress={()=>navigation.navigate("WeeklyIncome")}/>
+        <Screen>
+        <NextButton title={'Next'} onPress={()=>navigation.navigate("Weekly Income")}/>
         </Screen>
       </Screen>
     )

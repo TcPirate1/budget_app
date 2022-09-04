@@ -8,7 +8,7 @@ export default function SavingScreen() {
     return (
     <View>
       <Text>SavingScreen</Text>
-      <AppButton title={'Next'} onPress={()=>navigation.navigate("WeeklyBudgetCalc")}/>
+      <AppButton title={'Next'} onPress={()=>navigation.navigate("Budget Calculator")}/>
     </View>
   )
 }
