@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function WeeklyPayment() {
     const navigation = useNavigation();
     return (
-      <Screen style={{flex:1}}>
+      <Screen>
       <Screen>
         <AppText>Enter your total weekly payments:</AppText>
         <AppTextInput placeholder={'$'}/>

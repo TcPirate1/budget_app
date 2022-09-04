@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function WeeklyIncome() {
     const navigation = useNavigation();
     return (
-    <Screen style={{flex:1}}>
+    <Screen>
       <Screen>
         <AppText>Enter your income:</AppText>
         <AppTextInput placeholder={'$'}/>
