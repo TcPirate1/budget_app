@@ -1,5 +1,4 @@
-import { StyleSheet } from 'react-native'
-import React from 'react'
+import React from 'react';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
@@ -22,5 +21,3 @@ export default function WeeklyPayment() {
     </Screen>
   )
 }
-
-const styles = StyleSheet.create({})
