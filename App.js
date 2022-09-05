@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
-// import SettingsScreen from './screens/SettingsScreen';
 import { Provider as PaperProvider } from 'react-native-paper';
 import WelcomeScreen from './screens/WelcomeScreen';
 import WeeklyIncome from './screens/WeeklyIncome';
@@ -25,7 +24,6 @@ export default function App() {
         <Stack.Screen name="Saving Screen" component={SavingScreen} />
         <Stack.Screen name="Budget Calculator" component={WeeklyBudgetCalc} />
         <Stack.Screen name="Main Page" component={Main} />
-        {/* <Stack.Screen name="Settings" component={SettingsScreen} /> */}
       </Stack.Navigator>
       <StatusBar style='auto'/>
     </NavigationContainer>
