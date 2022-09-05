@@ -4,8 +4,7 @@ import React from 'react'
 export default function Groceries() {
   return (
     <SafeAreaView>
-        <FlatList data={[{title:'groceries'}]}
-        renderItem={({item})=><Text style={item.title}></Text>}></FlatList>
+        <FlatList ListEmptyComponent={ <Text>There is nothing in this list</Text>}></FlatList>
     </SafeAreaView>
   )
 }
