@@ -7,14 +7,14 @@ import LoginButton from '../components/LoginButton';
 import { useNavigation } from '@react-navigation/native';
 
 export default function LoginScreen() {
-  const navigation = useNavigation();
+  const newPage = useNavigation();
   return (
     <Screen>
       <AppText>Login with your email</AppText>
       <AppText style={{marginBottom:"10%"}}>fill the field and click Register</AppText>
       <AppTextInput placeholder={'Email'}></AppTextInput>
       <AppTextInput placeholder={'Password'} secureTextEntry></AppTextInput>
-      <LoginButton title={'Login'} onPress={()=>navigation.navigate("Welcome")}/>
+      <LoginButton title={'Login'} onPress={()=>newPage.navigate("Welcome")}/>
       <AppButton title={'Register'}/>
     </Screen>
   )

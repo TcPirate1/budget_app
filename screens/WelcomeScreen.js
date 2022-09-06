@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 
 
 export default function WelcomeScreen() {
-  const navigation = useNavigation();
+  const newPage = useNavigation();
     return (
       <Screen style={{flex:1}}>
         <Screen style={{justifyContent:'center'}}>
@@ -14,7 +14,7 @@ export default function WelcomeScreen() {
         <AppText>Enter some basic information to get started.</AppText>
         </Screen>
         <Screen>
-        <NextButton title={'Next'} onPress={()=>navigation.navigate("Weekly Income")}/>
+        <NextButton title={'Next'} onPress={()=>newPage.navigate("Weekly Income")}/>
         </Screen>
       </Screen>
     )

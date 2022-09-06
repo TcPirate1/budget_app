@@ -7,7 +7,7 @@ import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 
 export default function SavingScreen() {
-    const navigation = useNavigation();
+    const newPage = useNavigation();
     return (
     <Screen>
       <Screen>
@@ -16,7 +16,7 @@ export default function SavingScreen() {
       <AppButton title={'Add'} onPress={()=>console.log('Added')}/>
       </Screen>
       <Screen>
-      <NextButton title={'Next'} onPress={()=>navigation.navigate("Budget Calculator")}/>
+      <NextButton title={'Next'} onPress={()=>newPage.navigate("Budget Calculator")}/>
       </Screen>
     </Screen>
   )

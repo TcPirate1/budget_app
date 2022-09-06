@@ -6,7 +6,7 @@ import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WeeklyBudgetCalc({route}) {
-    const navigation = useNavigation();
+    const newPage = useNavigation();
     // let Calculation = Income - Payment - Savings;
     let Income=`${route.params.paramKey}`;
     // let Payment=`${route.params.paramKey}`;
@@ -18,7 +18,7 @@ export default function WeeklyBudgetCalc({route}) {
       <AppTextInput editable={false}>You have ${Income}</AppTextInput>
       </Screen>
       <Screen>
-      <NextButton title={'Next'} onPress={()=>navigation.navigate("Main Page")}/>
+      <NextButton title={'Next'} onPress={()=>newPage.navigate("Main Page")}/>
       </Screen>
     </Screen>
   )

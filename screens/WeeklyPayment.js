@@ -7,7 +7,7 @@ import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 
 export default function WeeklyPayment() {
-    const navigation = useNavigation();
+    const newPage = useNavigation();
     return (
       <Screen>
       <Screen>
@@ -16,7 +16,7 @@ export default function WeeklyPayment() {
         <AppButton title={'Add'} onPress={()=>console.log("Button will add")}/>
       </Screen>
         <Screen>
-        <NextButton title={'Next'} onPress={()=>navigation.navigate("Saving Screen")}/>
+        <NextButton title={'Next'} onPress={()=>newPage.navigate("Saving Screen")}/>
         </Screen>
     </Screen>
   )
