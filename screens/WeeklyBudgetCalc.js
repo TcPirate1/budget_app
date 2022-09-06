@@ -5,17 +5,17 @@ import AppTextInput from '../components/AppTextInput';
 import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 
-export default function WeeklyBudgetCalc() {
+export default function WeeklyBudgetCalc({route}) {
     const navigation = useNavigation();
-    let Calculation = Income - Payment - Savings;
-    let Income;
-    let Payment;
-    let Savings;
+    // let Calculation = Income - Payment - Savings;
+    let Income=`${route.params.paramKey}`;
+    // let Payment=`${route.params.paramKey}`;
+    // let Savings=`${route.params.paramKey}`;
     return (
     <Screen>
       <Screen>
       <AppText>Budget Calculator</AppText>
-      <AppTextInput editable={false}>You have ${Calculation}</AppTextInput>
+      <AppTextInput editable={false}>You have ${Income}</AppTextInput>
       </Screen>
       <Screen>
       <NextButton title={'Next'} onPress={()=>navigation.navigate("Main Page")}/>
