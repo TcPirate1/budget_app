@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.secondary,
     flexDirection: "row",
-    width: "100%",
+    width: "70%",
     padding: 15,
     marginVertical: 10,
     justifyContent: "center",
+    alignSelf:"center",
   },
   icon: {
     marginRight: 10,

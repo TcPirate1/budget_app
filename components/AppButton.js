@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     alignSelf:"center",
     padding: 15,
     width: "50%",
-    marginVertical: "10%",
+    marginVertical: "3%",
   },
   text: {
     color: colors.white,

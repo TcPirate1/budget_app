@@ -9,4 +9,5 @@ export default {
   danger: "#ff5252",
   purple: "#ff00d0",
   lightblue: "#428df5",
+  red: "#ff0000"
 };
