@@ -15,7 +15,7 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Welcome" component={WelcomeScreen} />
         <Stack.Screen name="Survey" component={SurveyScreen} />
-        <Stack.Screen name="Main Page" component={Main} />
+        <Stack.Screen name="Main" options={{ title: 'Home' }} component={Main} />
       </Stack.Navigator>
       <StatusBar style='auto'/>
     </NavigationContainer>
