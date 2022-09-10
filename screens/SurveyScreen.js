@@ -6,7 +6,7 @@ import NextButton from '../components/NextButton';
 import { useNavigation } from '@react-navigation/native';
 import { Alert, KeyboardAvoidingView, ScrollView } from 'react-native';
 
-export default function SurveyScreen({navigation}) {
+export default function SurveyScreen() {
     const newPage = useNavigation();
     const [weeklyIncome, setIncome] = useState();
     const [weeklyExpense, setExpense] = useState();
@@ -38,7 +38,7 @@ export default function SurveyScreen({navigation}) {
         <AppText>The amount you have to spend this week is:</AppText>
         <AppTextInput editable={false}>${budget}</AppTextInput>
 
-        <NextButton title={'Next'} onPress={()=>navigation.navigate("Main",{paramKey: budget})}/>
+        <NextButton title={'Next'} onPress={()=>newPage.navigate("Main",{paramKey: budget})}/>
       </ScrollView>
     </KeyboardAvoidingView>
   )
