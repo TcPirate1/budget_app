@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import LoginScreen from './screens/LoginScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import SurveyScreen from './screens/SurveyScreen';
@@ -20,6 +21,8 @@ const Main = () => (
             <Tab.Screen name="Others" component={Other} options={{tabBarIcon: ()=>(<MaterialIcons name="miscellaneous-services" size={24} color="white" />)}}/>
           </Tab.Navigator>
 );
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
