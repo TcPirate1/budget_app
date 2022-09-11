@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import LoginScreen from './screens/LoginScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import SurveyScreen from './screens/SurveyScreen';
@@ -11,6 +12,7 @@ import Takeout from './screens/categories/Takeout';
 import Transport from './screens/categories/Transport';
 import { MaterialIcons } from '@expo/vector-icons';
 
+const Tab = createMaterialBottomTabNavigator();
 
 const Main = () => (
   <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
