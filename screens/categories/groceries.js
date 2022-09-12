@@ -16,10 +16,10 @@ const Item = ({item}) => (
   </SafeAreaView>
 );
 
-export default function Groceries() {
+export default function Groceries({route}) {
   return (
     <SafeAreaView>
-      <AppText>$</AppText>
+      <AppText>${route.params.budget}</AppText>
       <AppButton title={'Add'}/>
         <FlatList data={data} renderItem={Item} style={styles.flatlist} ListEmptyComponent={ <Text style={styles.text}>There is nothing in this list</Text> }></FlatList>
     </SafeAreaView>

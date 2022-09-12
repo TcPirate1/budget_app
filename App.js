@@ -15,13 +15,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 
 const Main = () => (
-  <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
-            <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
-            <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>
-            <Tab.Screen name="Health Care" component={HealthCare} options={{tabBarIcon: ()=>(<MaterialIcons name="local-hospital" size={24} color="white" />)}}/>
-            <Tab.Screen name="Takeout" component={Takeout} options={{tabBarIcon: ()=>(<MaterialIcons name="restaurant" size={24} color="white" />)}}/>
-            <Tab.Screen name="Others" component={Other} options={{tabBarIcon: ()=>(<MaterialIcons name="miscellaneous-services" size={24} color="white" />)}}/>
-          </Tab.Navigator>
+<Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
+  <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
+  <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>
+  <Tab.Screen name="Health Care" component={HealthCare} options={{tabBarIcon: ()=>(<MaterialIcons name="local-hospital" size={24} color="white" />)}}/>
+  <Tab.Screen name="Takeout" component={Takeout} options={{tabBarIcon: ()=>(<MaterialIcons name="restaurant" size={24} color="white" />)}}/>
+  <Tab.Screen name="Others" component={Other} options={{tabBarIcon: ()=>(<MaterialIcons name="miscellaneous-services" size={24} color="white" />)}}/>
+  </Tab.Navigator>
 );
 
 const Stack = createNativeStackNavigator();
