@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from 'react-native';
+import React, { useContext } from 'react';
+import { BudgetContext } from '../create_context_file';
 
 export default function Transport() {
+  const budget = useContext(BudgetContext);
   return (
     <View>
-      <Text>transport</Text>
+      <Text>{budget}</Text>
     </View>
   )
 }
