@@ -11,10 +11,12 @@ import Other from './screens/categories/Other';
 import Takeout from './screens/categories/Takeout';
 import Transport from './screens/categories/Transport';
 import { MaterialIcons } from '@expo/vector-icons';
+import { BudgetContext } from './screens/create_context_file';
 
 const Tab = createMaterialBottomTabNavigator();
 
-const Main = () => (
+const Main = ({route}) => (
+  <BudgetContext.Provider value={route.params.budget}>
 <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
   <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
   <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>
@@ -22,6 +24,7 @@ const Main = () => (
   <Tab.Screen name="Takeout" component={Takeout} options={{tabBarIcon: ()=>(<MaterialIcons name="restaurant" size={24} color="white" />)}}/>
   <Tab.Screen name="Others" component={Other} options={{tabBarIcon: ()=>(<MaterialIcons name="miscellaneous-services" size={24} color="white" />)}}/>
   </Tab.Navigator>
+  </BudgetContext.Provider>
 );
 
 const Stack = createNativeStackNavigator();

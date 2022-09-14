@@ -38,7 +38,7 @@ export default function SurveyScreen() {
         <AppText>The amount you have to spend this week is:</AppText>
         <AppTextInput editable={false}>${budget}</AppTextInput>
 
-        <NextButton title={'Next'} onPress={()=>newPage.navigate("Main",{screen: 'Groceries', params: {budget}})}/>
+        <NextButton title={'Next'} onPress={()=>newPage.navigate("Main",{budget})}/>
       </ScrollView>
     </KeyboardAvoidingView>
   )
