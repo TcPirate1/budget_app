@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, SafeAreaView } from 'react-native'
-import React, { useContext } from 'react'
+import { FlatList, StyleSheet, Text, SafeAreaView } from 'react-native';
+import React, { useContext } from 'react';
 import AppButton from '../../components/AppButton';
 import AppText from '../../components/AppText';
 import { BudgetContext } from '../create_context_file';
