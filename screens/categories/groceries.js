@@ -1,7 +1,8 @@
-import { FlatList, StyleSheet, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import { FlatList, StyleSheet, Text, SafeAreaView } from 'react-native';
+import React, { useContext } from 'react';
 import AppButton from '../../components/AppButton';
 import AppText from '../../components/AppText';
+import { BudgetContext } from '../create_context_file';
 
 const data = [
   {
@@ -17,9 +18,10 @@ const Item = ({item}) => (
 );
 
 export default function Groceries() {
+  const budget = useContext(BudgetContext);
   return (
     <SafeAreaView>
-      <AppText>$</AppText>
+      <AppText>${budget}</AppText>
       <AppButton title={'Add'}/>
         <FlatList data={data} renderItem={Item} style={styles.flatlist} ListEmptyComponent={ <Text style={styles.text}>There is nothing in this list</Text> }></FlatList>
     </SafeAreaView>

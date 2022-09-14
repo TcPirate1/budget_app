@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
