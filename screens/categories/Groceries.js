@@ -39,7 +39,7 @@ export default function Groceries() {
             <AppText>Add your items here</AppText>
             <AppTextInput></AppTextInput>
             <AppButton title='Hide Modal' onPress={toggleModal}/>
-            <AppButton title='Add' onPress={toggleModal}/>
+            <AppButton title='Add'/>
           </SafeAreaView>
         </Modal>
     </SafeAreaView>
