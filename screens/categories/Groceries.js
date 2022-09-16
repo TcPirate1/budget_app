@@ -11,7 +11,7 @@ import { today } from '../Date';
 
 const data = [
   {
-    title : "Gum",
+    product : "Gum",
     cost : "$3",
     date : today,
   },
@@ -37,7 +37,8 @@ export default function Groceries() {
         <Modal isVisible={ModalVisibility}>
           <SafeAreaView style={{flex:1}}>
             <AppText>Add your items here</AppText>
-            <AppTextInput></AppTextInput>
+            <AppTextInput placeholder='Product name'></AppTextInput>
+            <AppTextInput placeholder='Cost'></AppTextInput>
             <AppButton title='Hide Modal' onPress={toggleModal}/>
             <AppButton title='Add'/>
           </SafeAreaView>
