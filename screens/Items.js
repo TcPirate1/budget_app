@@ -1,10 +1,10 @@
-import { SafeAreaView, TouchableOpacity } from 'react-native';
+import { SafeAreaView, TouchableOpacity, Alert } from 'react-native';
 import defaultStyles from "../config/styles";
 import AppText from '../components/AppText';
 
 export const Item = ({item}) => (
     <SafeAreaView >
-      <TouchableOpacity>
+      <TouchableOpacity onPress={()=>Alert.alert("You did it!", "Item selected!")}>
       <AppText style={defaultStyles.flatlistText}>{item.title}           {item.cost}</AppText>
       <AppText>{item.date}</AppText>
       </TouchableOpacity>
