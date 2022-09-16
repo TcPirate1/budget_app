@@ -5,9 +5,7 @@ import AppText from '../../components/AppText';
 import { BudgetContext } from '../create_context_file';
 import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
-
-const date = new Date();
-const today = `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
+import { today } from '../Date';
 
 const data = [
   {
