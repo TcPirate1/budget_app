@@ -24,7 +24,7 @@ export default {
   },
   flatlistText: {
     margin: '5%',
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: colors.red,
   },
 };
