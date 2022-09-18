@@ -19,7 +19,7 @@ export default function SurveyScreen() {
     else{
       budget = budget;
     }
-    
+    //Try removing the placeholders for the textinput (there is a warning that textinput is expecting a string when clear buttons are pressed)
     return (
     <KeyboardAvoidingView style={{flex:1}}>
       <ScrollView style={{marginTop:'1%'}}>
