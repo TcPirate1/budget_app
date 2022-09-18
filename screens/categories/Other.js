@@ -50,5 +50,3 @@ export default function Other() {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({})

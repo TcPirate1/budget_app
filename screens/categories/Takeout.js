@@ -50,5 +50,3 @@ export default function Takeout() {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({})

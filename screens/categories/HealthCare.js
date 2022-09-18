@@ -50,5 +50,3 @@ export default function HealthCare() {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({})

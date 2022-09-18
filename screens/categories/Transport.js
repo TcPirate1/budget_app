@@ -50,5 +50,3 @@ export default function Transport() {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({})
