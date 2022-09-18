@@ -1,4 +1,4 @@
-import { FlatList, Text, SafeAreaView, Platform } from 'react-native';
+import { FlatList, Text, SafeAreaView, Platform, KeyboardAvoidingView } from 'react-native';
 import React, { useContext, useState } from 'react';
 import Modal from "react-native-modal";
 import AppButton from '../../components/AppButton';
@@ -37,18 +37,15 @@ export default function Groceries() {
     <SafeAreaView style={defaultStyles.flatlist}>
       <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
       <AppButton title='Add new item' onPress={toggleModal}/>
-        <FlatList data={exampleState}
-        renderItem={Item}
-        keyExtractor={item=>item.id}
-        ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
+        <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 
-        <Modal isVisible={ModalVisibility}>
-          <SafeAreaView style={{flex:1}}>
-            <AppText>Add your items here</AppText>
+        <Modal isVisible={ModalVisibility} transparent={false}>
+          <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>
+            <AppText style={{backgroundColor:'green', color:'white', borderRadius:15, padding:'3%'}}>Add your items here</AppText>
             <AppTextInput placeholder='Product name' onChangeText={(productName)=>setProductName(productName)}/>
             <AppTextInput placeholder='Cost' onChangeText={(price)=>setPrice(price)}/>
-            <AppButton title='Hide Modal' onPress={toggleModal}/>
             <AppButton title='Add' onPress={()=>{addElement();toggleModal()}}/>
+            <AppButton title='Cancel' onPress={toggleModal}/>
           </SafeAreaView>
         </Modal>
     </SafeAreaView>
