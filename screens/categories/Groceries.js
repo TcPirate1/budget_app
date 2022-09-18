@@ -1,4 +1,4 @@
-import { FlatList, Text, SafeAreaView, Platform, KeyboardAvoidingView } from 'react-native';
+import { FlatList, Text, SafeAreaView, Platform } from 'react-native';
 import React, { useContext, useState } from 'react';
 import Modal from "react-native-modal";
 import AppButton from '../../components/AppButton';
