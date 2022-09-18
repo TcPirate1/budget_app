@@ -9,14 +9,6 @@ import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
 
-// const data = [
-//   {
-//     id : 1,
-//     product : "Gum",
-//     cost : "$3",
-//     date : today,
-//   },
-// ];
 
 export default function Groceries() {
   const budget = useContext(BudgetContext);
