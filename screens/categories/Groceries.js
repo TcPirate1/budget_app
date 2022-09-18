@@ -9,13 +9,14 @@ import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
 
-const data = [
-  {
-    product : "Gum",
-    cost : "$3",
-    date : today,
-  },
-];
+// const data = [
+//   {
+//     id : 1,
+//     product : "Gum",
+//     cost : "$3",
+//     date : today,
+//   },
+// ];
 
 export default function Groceries() {
   const budget = useContext(BudgetContext);
@@ -26,13 +27,27 @@ export default function Groceries() {
     setModalVisibility(!ModalVisibility);
   };
 
+  const [initialElements, changeEl] = useState([{id: '0', text: 'Object 1'}, {id: '1', text: 'Object 2'},]);
+  const [exampleState, setExampleState] = useState(initialElements);
+  const [idx, incr] = useState(initialElements.length);
+
+  const addElement = () => {
+    let newArray = [...initialElements , {id: idx, text: `Object${(idx+1)}`}];
+    incr(idx + 1);
+    setExampleState(newArray);
+    changeEl(newArray);
+  }
+
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
       <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
       <AppButton title='Add new item' onPress={toggleModal}/>
-      <AppButton title='Remove item'/>
-        <FlatList data={data} renderItem={Item}
-        ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } ></FlatList>
+      {/* <AppButton title='Remove item'/> */}
+        <FlatList data={exampleState}
+        renderItem={item=>(<Text>{item.item.text}</Text>)}
+        keyExtractor={item=>item.id}
+        ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
+        <AppButton title='Add element' onPress={addElement}></AppButton>
 
         <Modal isVisible={ModalVisibility}>
           <SafeAreaView style={{flex:1}}>
@@ -40,7 +55,7 @@ export default function Groceries() {
             <AppTextInput placeholder='Product name'></AppTextInput>
             <AppTextInput placeholder='Cost'></AppTextInput>
             <AppButton title='Hide Modal' onPress={toggleModal}/>
-            <AppButton title='Add'/>
+            <AppButton title='Add' onPress={()=>{addElement();toggleModal()}}/>
           </SafeAreaView>
         </Modal>
     </SafeAreaView>
