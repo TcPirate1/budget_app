@@ -18,7 +18,7 @@ export default function Other() {
     setModalVisibility(!ModalVisibility);
   };
 
-  const [productName, setProductName] = useState();
+  const [itemName, setItemName] = useState();
   const [price, setPrice] = useState(); //These are changed by the text input from modal
   
   const [initialElements, changeEl] = useState([]);
@@ -26,7 +26,7 @@ export default function Other() {
   const [idx, incr] = useState(initialElements.length);
 
   const addElement = () => {
-    let newArray = [...initialElements , {id: idx, product: `${productName}`, cost : `$${price}`, date : today}];
+    let newArray = [...initialElements , {id: idx, product: `${itemName}`, cost : `$${price}`, date : today}];
     incr(idx + 1);
     setExampleState(newArray);
     changeEl(newArray);
@@ -41,7 +41,7 @@ export default function Other() {
         <Modal isVisible={ModalVisibility} transparent={false}>
           <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>
             <AppText style={{backgroundColor:'green', color:'white', borderRadius:15, padding:'3%'}}>Add your items here</AppText>
-            <AppTextInput placeholder='Product name' onChangeText={(productName)=>setProductName(productName)}/>
+            <AppTextInput placeholder='Item name' onChangeText={(itemName)=>setItemName(itemName)}/>
             <AppTextInput placeholder='Cost' onChangeText={(price)=>setPrice(price)}/>
             <AppButton title='Add' onPress={()=>{addElement();toggleModal()}}/>
             <AppButton title='Cancel' onPress={toggleModal}/>
