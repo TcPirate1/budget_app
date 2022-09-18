@@ -31,12 +31,12 @@ export default function Groceries() {
   const [price, setPrice] = useState();
   
   // const [initialElements, changeEl] = useState([{id: '0', text: 'Object 1'}, {id: '1', text: 'Object 2'},]);
-  const [initialElements, changeEl] = useState([{id : "0", product : "Gum", cost : "$3", date : today},]);
+  const [initialElements, changeEl] = useState([]);
   const [exampleState, setExampleState] = useState(initialElements);
   const [idx, incr] = useState(initialElements.length);
 
   const addElement = () => {
-    let newArray = [...initialElements , {id: idx, product: `Object ${(idx+1)}`, cost : "$3", date : today}];
+    let newArray = [...initialElements , {id: idx, product: `${productName}`, cost : `$${price}`, date : today}];
     incr(idx + 1);
     setExampleState(newArray);
     changeEl(newArray);
