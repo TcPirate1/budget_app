@@ -9,7 +9,7 @@ export default function Logout({...otherProps}) {
     const handleSignOut = () => {
         auth.signOut()
         .then(()=>{
-            newPage.reset("Login")
+            newPage.reset({index: 0, routes: [{name: "Login"}]})
         })
         .catch(error => alert(error.message))
     }
