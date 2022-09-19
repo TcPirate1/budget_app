@@ -1,4 +1,4 @@
-import { FlatList, Text, SafeAreaView, Platform } from 'react-native';
+import { FlatList, Text, SafeAreaView, Platform, View } from 'react-native';
 import React, { useContext, useState } from 'react';
 import Modal from "react-native-modal";
 import AppButton from '../../components/AppButton';
@@ -8,6 +8,7 @@ import { BudgetContext } from '../create_context_file';
 import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
+import Logout from '../../components/Logout';
 
 
 export default function Groceries() {
@@ -35,7 +36,10 @@ export default function Groceries() {
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
-      <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
+      <View>
+        <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
+        <Logout/>
+      </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
         <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 
