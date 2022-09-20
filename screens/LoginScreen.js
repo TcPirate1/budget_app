@@ -45,7 +45,7 @@ export default function LoginScreen() {
       <AppText style={{marginBottom:"10%"}}>fill the field and click Register</AppText>
       <AppTextInput placeholder='Email' value={email} onChangeText={(email)=>setEmail(email)}></AppTextInput>
       <AppTextInput placeholder='Password' value={password} onChangeText={(password)=>setPassword(password)} secureTextEntry></AppTextInput>
-      <LoginButton title='Login' onPress={newPage.navigate("Welcome")}/>
+      <LoginButton title='Login' onPress={()=>newPage.navigate("Welcome")}/>
       {/* <LoginButton title='Login' onPress={handleLogin}/> */}
       <AppButton title='Register' onPress={handleSignup}/>
     </Screen>

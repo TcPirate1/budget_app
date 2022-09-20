@@ -5,7 +5,6 @@ import AppButton from '../../components/AppButton';
 import AppText from '../../components/AppText';
 import AppTextInput from '../../components/AppTextInput';
 import { BudgetContext } from '../create_context_file';
-// import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
 import Logout from '../../components/Logout';
@@ -22,16 +21,6 @@ export default function Groceries() {
 
   const [itemName, setItemName] = useState();
   const [price, setPrice] = useState(); //These are changed by the text input from modal
-
-  const Item = ({item}) => (
-    <SafeAreaView >
-      <TouchableOpacity onPress={()=>Alert.alert("Warning!!!",`Are you sure you want to delete ${item.product}?`,
-      [{text: 'Yes', onPress: ()=>removeElement()},{text: 'No'}])}>
-      <AppText style={defaultStyles.flatlistText}>{item.product}           {item.cost}</AppText>
-      <AppText>{item.date}</AppText>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
   
   const [initialElements, changeEl] = useState([]);
   const [exampleState, setExampleState] = useState(initialElements);
@@ -44,12 +33,22 @@ export default function Groceries() {
     setExampleState(newArray);
     changeEl(newArray);
   }
-
-  const removeElement = () => {
-    const newData = newArray.filter(item=>item.id !== idx);
+  const removeElement = (id) => {
+    const newData = initialElements.filter(item=>item.id !== id);
     setExampleState(newData)
+    changeEl(newData);
     //new state
   }
+
+  const RenderItem = ({item}) => (
+    <SafeAreaView >
+      <TouchableOpacity onPress={()=>Alert.alert("WARNING!", `You are about to delete ${item.product}\nthat you brought on ${item.date}\nAre you sure?`,
+      [{text: "Yes", onPress: ()=>removeElement(item.id)}, {text: "No"}])}>
+      <AppText style={defaultStyles.flatlistText}>{item.product}           {item.cost}</AppText>
+      <AppText>{item.date}</AppText>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
@@ -62,7 +61,7 @@ export default function Groceries() {
         </View>
       </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
-        <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
+        <FlatList data={exampleState} renderItem={RenderItem} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 
         <Modal isVisible={ModalVisibility} transparent={false}>
           <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>

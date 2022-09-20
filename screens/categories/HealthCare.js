@@ -21,26 +21,33 @@ export default function HealthCare() {
   const [itemName, setItemName] = useState();
   const [price, setPrice] = useState(); //These are changed by the text input from modal
 
-  const Item = ({item}) => (
+  const [initialElements, changeEl] = useState([]);
+  const [exampleState, setExampleState] = useState(initialElements);
+  const [idx, incr] = useState(initialElements.length);
+
+  let newArray = [...initialElements , {id: idx, product: `${itemName}`, cost : `$${price}`, date : today}];
+
+  const addElement = () => {
+    incr(idx + 1);
+    setExampleState(newArray);
+    changeEl(newArray);
+  }
+  const removeElement = (id) => {
+    const newData = initialElements.filter(item=>item.id !== id);
+    setExampleState(newData)
+    changeEl(newData);
+    //new state
+  }
+
+  const RenderItem = ({item}) => (
     <SafeAreaView >
-      <TouchableOpacity onPress={()=>Alert.alert("Warning!!!",`Are you sure you want to delete ${item.product}?`,
-      [{text: 'Yes', onPress: ()=>removeElement(item.id)},{text: 'No'}])}>
+      <TouchableOpacity onPress={()=>Alert.alert("WARNING!", `You are about to delete ${item.product}\nthat you brought on ${item.date}\nAre you sure?`,
+      [{text: "Yes", onPress: ()=>removeElement(item.id)}, {text: "No"}])}>
       <AppText style={defaultStyles.flatlistText}>{item.product}           {item.cost}</AppText>
       <AppText>{item.date}</AppText>
       </TouchableOpacity>
     </SafeAreaView>
   );
-  
-  const [initialElements, changeEl] = useState([]);
-  const [exampleState, setExampleState] = useState(initialElements);
-  const [idx, incr] = useState(initialElements.length);
-
-  const addElement = () => {
-    let newArray = [...initialElements , {id: idx, product: `${itemName}`, cost : `$${price}`, date : today}];
-    incr(idx + 1);
-    setExampleState(newArray);
-    changeEl(newArray);
-  }
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
@@ -53,7 +60,7 @@ export default function HealthCare() {
         </View>
       </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
-        <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
+        <FlatList data={exampleState} renderItem={RenderItem} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 
         <Modal isVisible={ModalVisibility} transparent={false}>
           <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>
