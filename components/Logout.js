@@ -1,11 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, Alert } from "react-native";
 import colors from "../config/colors";
 import { auth } from "../Authentication";
 import { useNavigation } from '@react-navigation/native';
 
 export default function Logout({style,...otherProps}) {
     const newPage = useNavigation();
+
+    const user = auth.currentUser; //gets current user's information
+
     const handleSignOut = () => {
         auth.signOut()
         .then(()=>{
@@ -15,7 +18,8 @@ export default function Logout({style,...otherProps}) {
     }
 
     return(
-        <TouchableOpacity style={[styles.button, style]} onPress={handleSignOut} {...otherProps}>
+        <TouchableOpacity style={[styles.button, style]} onPress={()=>Alert.alert("Log out",`Are you sure you want to log out of ${user.email}?`,
+        [{text:'Yes', onPress: ()=>handleSignOut()}, {text: 'No'}])} {...otherProps}>
             <Text style={styles.text} {...otherProps}>Log out</Text>
         </TouchableOpacity>
     );
