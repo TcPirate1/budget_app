@@ -26,7 +26,7 @@ export default function LoginScreen() {
     auth.createUserWithEmailAndPassword(email, password)
     .then(userCredentials => {
       const user = userCredentials.user;
-      alert.apply('Thank you for registering with' + user.email + 'you will be redirected to the Welcome page.')
+      alert('Thank you for registering with' + user.email + 'you will be redirected to the Welcome page.')
     })
     .catch(error => alert(error.message))
   }
