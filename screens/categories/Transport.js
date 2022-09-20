@@ -1,4 +1,4 @@
-import { FlatList, Text, SafeAreaView, Platform } from 'react-native';
+import { FlatList, Text, SafeAreaView, Platform, View } from 'react-native';
 import React, { useContext, useState } from 'react';
 import Modal from "react-native-modal";
 import AppButton from '../../components/AppButton';
@@ -8,6 +8,7 @@ import { BudgetContext } from '../create_context_file';
 import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
+import Logout from '../../components/Logout';
 
 export default function Transport() {
   const budget = useContext(BudgetContext);
@@ -34,7 +35,14 @@ export default function Transport() {
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
-      <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
+      <View style={{margin: Platform.OS === "android" ?'3%': 0, flexDirection:'row'}}>
+        <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
+        <AppText>${budget}</AppText>
+        </View>
+        <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
+        <Logout/>
+        </View>
+      </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
         <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 

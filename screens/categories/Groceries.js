@@ -36,9 +36,13 @@ export default function Groceries() {
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>
-      <View>
-        <AppText style={{marginTop: Platform.OS === "android" ?'3%': 0}}>${budget}</AppText>
+      <View style={{margin: Platform.OS === "android" ?'3%': 0, flexDirection:'row'}}>
+        <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
+        <AppText>${budget}</AppText>
+        </View>
+        <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
         <Logout/>
+        </View>
       </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
         <FlatList data={exampleState} renderItem={Item} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
