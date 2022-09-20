@@ -5,7 +5,6 @@ import AppButton from '../../components/AppButton';
 import AppText from '../../components/AppText';
 import AppTextInput from '../../components/AppTextInput';
 import { BudgetContext } from '../create_context_file';
-import { Item } from '../Items';
 import defaultStyles from "../../config/styles";
 import { today } from '../Date';
 import Logout from '../../components/Logout';
@@ -21,6 +20,16 @@ export default function HealthCare() {
 
   const [itemName, setItemName] = useState();
   const [price, setPrice] = useState(); //These are changed by the text input from modal
+
+  const Item = ({item}) => (
+    <SafeAreaView >
+      <TouchableOpacity onPress={()=>Alert.alert("Warning!!!",`Are you sure you want to delete ${item.product}?`,
+      [{text: 'Yes', onPress: ()=>removeElement(item.id)},{text: 'No'}])}>
+      <AppText style={defaultStyles.flatlistText}>{item.product}           {item.cost}</AppText>
+      <AppText>{item.date}</AppText>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
   
   const [initialElements, changeEl] = useState([]);
   const [exampleState, setExampleState] = useState(initialElements);
