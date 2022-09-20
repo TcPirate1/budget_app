@@ -4,7 +4,7 @@ import colors from "../config/colors";
 import { auth } from "../Authentication";
 import { useNavigation } from '@react-navigation/native';
 
-export default function Logout({...otherProps}) {
+export default function Logout({style,...otherProps}) {
     const newPage = useNavigation();
     const handleSignOut = () => {
         auth.signOut()
@@ -15,7 +15,7 @@ export default function Logout({...otherProps}) {
     }
 
     return(
-        <TouchableOpacity style={styles.button} onPress={handleSignOut} {...otherProps}>
+        <TouchableOpacity style={[styles.button, style]} onPress={handleSignOut} {...otherProps}>
             <Text style={styles.text} {...otherProps}>Log out</Text>
         </TouchableOpacity>
     );
@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: "center",
         alignItems: "center",
-        padding: "2%",
+        padding: "4%",
     },
     text: {
         color: colors.white,
-        fontSize: 15,
-        padding: "1%",
+        fontSize: 14,
+        padding: "3%",
         textTransform: "uppercase",
         fontWeight: "bold",
     },
