@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Text } from 'react-native';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
@@ -49,6 +50,7 @@ export default function LoginScreen() {
       {/* <LoginButton title='Login' onPress={()=>newPage.navigate("Welcome")}/> */}
       <LoginButton title='Login' onPress={handleLogin}/>
       <AppButton title='Register' onPress={handleSignup}/>
+      <AppText style={{marginTop:'10%'}}>Or try the app <Text onPress={()=>newPage.navigate("Welcome")} style={{color:'green', textDecorationLine: 'underline'}}>here</Text></AppText>
     </Screen>
   )
 }
