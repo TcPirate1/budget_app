@@ -16,7 +16,7 @@ import { BudgetContext } from './screens/create_context_file';
 const Tab = createMaterialBottomTabNavigator();
 
 const Main = ({route}) => (
-  <BudgetContext.Provider value={route.params.budget}>
+  <BudgetContext.Provider value={route.params.weeklyBudget}>
 <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
   <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
   <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>

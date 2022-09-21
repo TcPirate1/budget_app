@@ -13,14 +13,7 @@ import Logout from '../components/Logout';
 export default function Categories() {
   const weeklyBudget = useContext(BudgetContext);
 
-  let budget;
-
-  if (Number.isNaN(budget)){
-    budget = 0;
-  }
-  else{
-    budget = weeklyBudget - price;
-  }
+  let budget = weeklyBudget;
 
   const [ModalVisibility, setModalVisibility] = useState(false);
 
