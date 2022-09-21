@@ -13,12 +13,14 @@ import Logout from '../components/Logout';
 export default function Categories() {
   const weeklyBudget = useContext(BudgetContext);
 
-  // if (Number.isNaN(budget)){
-  //   budget = 0;
-  // }
-  // else{
-  //   budget = budget;
-  // }
+  let budget;
+
+  if (Number.isNaN(budget)){
+    budget = 0;
+  }
+  else{
+    budget = weeklyBudget - price;
+  }
 
   const [ModalVisibility, setModalVisibility] = useState(false);
 
@@ -61,7 +63,7 @@ export default function Categories() {
     <SafeAreaView style={defaultStyles.flatlist}>
       <View style={{margin: Platform.OS === "android" ?'3%': 0, flexDirection:'row'}}>
         <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
-        <AppText>${weeklyBudget}</AppText>
+        <AppText>${budget}</AppText>
         </View>
         <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
         <Logout/>
