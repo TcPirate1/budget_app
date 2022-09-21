@@ -67,7 +67,7 @@ export default function Categories() {
           <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>
             <AppText style={{backgroundColor:'green', color:'white', borderRadius:15, padding:'3%'}}>Add your items here</AppText>
             <AppTextInput placeholder='Item name' onChangeText={(itemName)=>setItemName(itemName)}/>
-            <AppTextInput placeholder='Cost' onChangeText={(price)=>setPrice(price)}/>
+            <AppTextInput keyboardType='numeric' placeholder='Cost' onChangeText={(price)=>setPrice(price)}/>
             <AppButton title='Add' onPress={()=>{addElement();toggleModal()}}/>
             <AppButton title='Cancel' onPress={toggleModal}/>
           </SafeAreaView>
