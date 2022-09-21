@@ -12,12 +12,12 @@ export default function SurveyScreen() {
     const [weeklyExpense, setExpense] = useState();
     const [weeklySaving, setSaving] = useState();
 
-    let budget = weeklyIncome - weeklyExpense - weeklySaving
-    if (Number.isNaN(budget)){
-      budget = 0;
+    let weeklyBudget = weeklyIncome - weeklyExpense - weeklySaving
+    if (Number.isNaN(weeklyBudget)){
+      weeklyBudget = 0;
     }
     else{
-      budget = budget;
+      weeklyBudget = weeklyBudget;
     }
 
     //Using undefined because states initially are. Lets placeholder be displayed when values are cleared.
@@ -37,9 +37,9 @@ export default function SurveyScreen() {
         <AppButton title={'Clear'} onPress={()=>{setSaving(undefined);Alert.alert("Field cleared")}}/>
 
         <AppText>The amount you have to spend this week is:</AppText>
-        <AppTextInput editable={false}>${budget}</AppTextInput>
+        <AppTextInput editable={false}>${weeklyBudget}</AppTextInput>
 
-        <NextButton title={'Next'} onPress={()=>newPage.navigate("Main",{budget})}/>
+        <NextButton title={'Next'} onPress={()=>newPage.navigate("Main",{weeklyBudget})}/>
       </ScrollView>
     </KeyboardAvoidingView>
   )
