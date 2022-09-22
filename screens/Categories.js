@@ -15,6 +15,8 @@ export default function Categories() {
 
   let budget = weeklyBudget;
 
+
+
   const [ModalVisibility, setModalVisibility] = useState(false);
 
   const toggleModal = () =>{
@@ -25,19 +27,19 @@ export default function Categories() {
   const [price, setPrice] = useState(); //These are changed by the text input from modal
   
   const [initialElements, changeEl] = useState([]);
-  const [exampleState, setExampleState] = useState(initialElements);
+  const [listState, setListState] = useState(initialElements);
   const [idx, incr] = useState(initialElements.length);
 
   let newArray = [...initialElements , {id: idx, product: itemName, cost : `$${price}`, date : today}];
 
   const addElement = () => {
     incr(idx + 1);
-    setExampleState(newArray);
+    setListState(newArray);
     changeEl(newArray);
   }
   const removeElement = (id) => {
     const newData = initialElements.filter(item=>item.id !== id);
-    setExampleState(newData)
+    setListState(newData)
     changeEl(newData);
     //new state
   }
@@ -63,7 +65,7 @@ export default function Categories() {
         </View>
       </View>
       <AppButton title='Add new item' onPress={toggleModal}/>
-        <FlatList data={exampleState} renderItem={RenderItem} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
+        <FlatList data={listState} renderItem={RenderItem} keyExtractor={item=>item.id} ListEmptyComponent={ <Text style={defaultStyles.emptylistText}>There is nothing in this list</Text> } />
 
         <Modal isVisible={ModalVisibility} transparent={false}>
           <SafeAreaView style={{flex:1, alignItems:'center', justifyContent:'center' }}>
