@@ -28,7 +28,7 @@ export default function Categories() {
   const [exampleState, setExampleState] = useState(initialElements);
   const [idx, incr] = useState(initialElements.length);
 
-  let newArray = [...initialElements , {id: idx, product: `${itemName}`, cost : `$${price}`, date : today}];
+  let newArray = [...initialElements , {id: idx, product: itemName, cost : `$${price}`, date : today}];
 
   const addElement = () => {
     incr(idx + 1);
