@@ -1,5 +1,5 @@
 import { FlatList, Text, SafeAreaView, Platform, View, TouchableOpacity, Alert } from 'react-native';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Modal from "react-native-modal";
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
@@ -8,14 +8,13 @@ import { BudgetContext } from './create_context_file';
 import defaultStyles from "../config/styles";
 import { today } from './Date';
 import Logout from '../components/Logout';
+import AsyncStorage from '@react-native-async-storage/async-storage';
  
 
 export default function Categories() {
   const weeklyBudget = useContext(BudgetContext);
 
   let budget = weeklyBudget;
-
-
 
   const [ModalVisibility, setModalVisibility] = useState(false);
 
@@ -30,12 +29,36 @@ export default function Categories() {
   const [listState, setListState] = useState(initialElements);
   const [idx, incr] = useState(initialElements.length);
 
+  useEffect(()=>{
+    getData();
+  },[])
+
+  const getData = () => {
+    try {
+      AsyncStorage.getItem('@newArray').then(value => {
+        if (value !== null) {
+          changeEl(JSON.parse(value))
+        }
+      })
+    }
+    catch (error) {
+      alert(error);
+    }
+  }
+
   let newArray = [...initialElements , {id: idx, product: itemName, cost : `$${price}`, date : today}];
 
-  const addElement = () => {
+  const addElement = async () => {
     incr(idx + 1);
     setListState(newArray);
     changeEl(newArray);
+    try {
+      const jsonValue = JSON.stringify(newArray)
+      await AsyncStorage.setItem('@newArray', jsonValue)
+    }
+    catch (error) {
+      alert(error);
+    }
   }
   const removeElement = (id) => {
     const newData = initialElements.filter(item=>item.id !== id);
