@@ -20,7 +20,8 @@ export default function SurveyScreen() {
       weeklyBudget = weeklyBudget;
     }
 
-    //Using undefined because states initially are. Lets placeholder be displayed when values are cleared.
+    //Using empty string to clear field. Lets placeholder be displayed when values are cleared but does not also clear
+    //the budget textfield
     return (
     <KeyboardAvoidingView style={{flex:1}}>
       <ScrollView style={{marginTop:'1%'}}>

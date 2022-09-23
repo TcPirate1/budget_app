@@ -37,12 +37,15 @@ export default function Categories() {
     setListState(newArray);
     changeEl(newArray);
   }
+  //Add element with increasing ids when a new item is added to the list
+
   const removeElement = (id) => {
     const newData = initialElements.filter(item=>item.id !== id);
     setListState(newData)
     changeEl(newData);
     //new state
   }
+  //Removes element from the list
 
   const RenderItem = ({item}) => (
     <SafeAreaView >
@@ -53,6 +56,7 @@ export default function Categories() {
       </TouchableOpacity>
     </SafeAreaView>
   );
+  //Renders the data onto the flatlist
 
   return (
     <SafeAreaView style={defaultStyles.flatlist}>

@@ -17,7 +17,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 const Main = ({route}) => (
   <BudgetContext.Provider value={route.params.weeklyBudget}>
-<Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
+  <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
   <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
   <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>
   <Tab.Screen name="Health Care" component={HealthCare} options={{tabBarIcon: ()=>(<MaterialIcons name="local-hospital" size={24} color="white" />)}}/>
@@ -26,6 +26,7 @@ const Main = ({route}) => (
   </Tab.Navigator>
   </BudgetContext.Provider>
 );
+//Tab buttons in that appears after SurveyScreen with weeklyBudget passed into it
 
 const Stack = createNativeStackNavigator();
 
@@ -42,3 +43,5 @@ export default function App() {
     </NavigationContainer>
   );
 }
+
+//Navigation stack off all navigation pages

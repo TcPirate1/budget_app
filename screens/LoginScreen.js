@@ -22,6 +22,7 @@ export default function LoginScreen() {
     })
     return unsubscribe
   },[])
+  //Skips the login page if there is already a user signed in
 
   const handleSignup = () => {
     auth.createUserWithEmailAndPassword(email, password)
@@ -31,6 +32,7 @@ export default function LoginScreen() {
     })
     .catch(error => alert(error.message))
   }
+  //Registration
 
   const handleLogin = () => {
     auth.signInWithEmailAndPassword(email, password)
@@ -40,6 +42,7 @@ export default function LoginScreen() {
     })
     .catch(error => alert(error.message))
   }
+  //Login
   
   return (
     <Screen>
@@ -47,7 +50,6 @@ export default function LoginScreen() {
       <AppText style={{marginBottom:"10%"}}>fill the field and click Register</AppText>
       <AppTextInput placeholder='Email' value={email} onChangeText={(email)=>setEmail(email)}></AppTextInput>
       <AppTextInput placeholder='Password' value={password} onChangeText={(password)=>setPassword(password)} secureTextEntry></AppTextInput>
-      {/* <LoginButton title='Login' onPress={()=>newPage.navigate("Welcome")}/> */}
       <LoginButton title='Login' onPress={handleLogin}/>
       <AppButton title='Register' onPress={handleSignup}/>
       <AppText style={{marginTop:'10%'}}>Or try the app <Text onPress={()=>newPage.navigate("Welcome")} style={{color:'green', textDecorationLine: 'underline'}}>here</Text></AppText>
