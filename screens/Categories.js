@@ -33,12 +33,12 @@ export default function Categories() {
     getData();
   },[])
 
-  const getData = () => {
+  const getData = async() => {
     try {
       AsyncStorage.getItem('@newArray').then(value => {
         if (value !== null) {
-          changeEl(JSON.parse(value))
-        }
+          setListState(JSON.parse(value))
+        } //This was set to the wrong state
       })
     }
     catch (error) {
@@ -60,11 +60,17 @@ export default function Categories() {
       alert(error);
     }
   }
-  const removeElement = (id) => {
+  const removeElement = async (id) => {
     const newData = initialElements.filter(item=>item.id !== id);
     setListState(newData)
     changeEl(newData);
     //new state
+    try {
+      await AsyncStorage.removeItem('@newArray');
+    }
+    catch (error) {
+      alert(error);
+    }
   }
 
   const RenderItem = ({item}) => (
