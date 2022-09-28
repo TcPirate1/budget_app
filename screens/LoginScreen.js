@@ -7,6 +7,7 @@ import AppButton from '../components/AppButton';
 import LoginButton from '../components/LoginButton';
 import { useNavigation } from '@react-navigation/native';
 import { auth } from '../Authentication';
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function LoginScreen() {
   const newPage = useNavigation();
@@ -25,7 +26,7 @@ export default function LoginScreen() {
   //Skips the login page if there is already a user signed in
 
   const handleSignup = () => {
-    auth.createUserWithEmailAndPassword(email, password)
+    createUserWithEmailAndPassword(auth, email, password)
     .then(userCredentials => {
       const user = userCredentials.user;
       alert(`Thank you for registering with ${user.email} \nyou will be redirected to the Welcome page.`)
@@ -34,8 +35,8 @@ export default function LoginScreen() {
   }
   //Registration
 
-  const handleLogin = () => {
-    auth.signInWithEmailAndPassword(email, password)
+  const handleLogin = async() => {
+    await signInWithEmailAndPassword(auth, email, password)
     .then(userCredentials => {
       const user = userCredentials.user;
       alert(`You have successfully logged in with ${user.email}`)
