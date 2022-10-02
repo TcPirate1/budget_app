@@ -18,7 +18,7 @@ export default function Logout({style,...otherProps}) {
     }
 
     return(
-        <TouchableOpacity style={[styles.button, style]} onPress={()=>Alert.alert("Log out",`Are you sure you want to log out?`,
+        <TouchableOpacity style={[styles.button, style]} onPress={()=>Alert.alert("Log out", user ? `Are you sure you want to log out of ${user.email}?` : "Are you sure you want to log out?",
         [{text:'Yes', onPress: ()=>handleSignOut()}, {text: 'No'}])} {...otherProps}>
             <Text style={styles.text} {...otherProps}>Log out</Text>
         </TouchableOpacity>
