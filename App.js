@@ -22,4 +22,4 @@ export default function App() {
   );
 }
 
-//Navigation stack off all navigation pages
+//Navigation stack of all navigation pages
