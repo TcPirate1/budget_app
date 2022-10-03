@@ -38,4 +38,4 @@ You can either scan QR code or enter the URL below the QR code, with the mobile 
 If you are using the Expo app make sure to be on the same network as the one that the project is being started from otherwise it will not detect the project even if you scanned the QR code.
 
 ## What the app should look like
-![Login Page](https://github.com/TcPirate1/budget_app/blob/main/assets/Mobile_App_Images/Login/Inputting_fields.jpg?raw=true)
+![Login Page](https://github.com/TcPirate1/budget_app/blob/readme/assets/Mobile_App_Images/Login/Inputting_fields.jpg?raw=true)
