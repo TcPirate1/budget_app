@@ -4,7 +4,7 @@ import Modal from "react-native-modal";
 import AppButton from '../components/AppButton';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
-import { BudgetContext } from './create_context_file';
+import { BudgetContext } from './BudgetContext';
 import defaultStyles from "../config/styles";
 import { today } from './Date';
 import Logout from '../components/Logout';
