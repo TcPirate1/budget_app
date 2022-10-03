@@ -12,7 +12,7 @@ Link to Expo go (Android): https://play.google.com/store/apps/details?id=host.ex
 
 Link to Expo go (Apple): https://apps.apple.com/us/app/expo-go/id982107779
 
-#### How to install expo & npm
+#### <ins>How to install expo & npm</ins>
 It is recommended to download nodejs as it includes npm and allows for npm packages to be delivered to the project.
 You can download **nodejs** here: https://nodejs.org/en/download/
 
@@ -23,11 +23,11 @@ Run this to install expo-cli.
 This command is also used to update expo-cli.
 It doesn't have to be in the project directory because it is a global command.
 
-## `npm install`
+### `npm install`
 
 Run this command to reinstate the gitignored folders/files into the project.
 
-## `npm start`
+### `npm start`
 
 Now you should be ready to launch the project. When this command is ran something like the image below should pop up:
 
@@ -36,3 +36,6 @@ Now you should be ready to launch the project. When this command is ran somethin
 You can either scan QR code or enter the URL below the QR code, with the mobile Expo app or enter the appropriate command to launch the project from an emulator (make sure the emulator is already launched before trying to open the project).
 
 If you are using the Expo app make sure to be on the same network as the one that the project is being started from otherwise it will not detect the project even if you scanned the QR code.
+
+## What the app should look like
+![Login Page](https://github.com/TcPirate1/budget_app/blob/main/assets/Mobile_App_Images/Login/Inputting_fields.jpg?raw=true)
