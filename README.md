@@ -38,4 +38,17 @@ You can either scan QR code or enter the URL below the QR code, with the mobile 
 If you are using the Expo app make sure to be on the same network as the one that the project is being started from otherwise it will not detect the project even if you scanned the QR code.
 
 ## What the app should look like
-![Login Page](https://github.com/TcPirate1/budget_app/blob/readme/assets/Mobile_App_Images/Login/Inputting_fields.jpg?raw=true)
+![Login Page](assets/Mobile_App_Images/Login/Inputting_fields.jpg?raw=true)
+![Login success](assets/Mobile_App_Images/Login/successful_login.jpg?raw=true)
+
+![Registering a new account](assets/Mobile_App_Images/Registration/Registering_new_account.jpg?raw=true)
+![Successful registration](assets/Mobile_App_Images/Registration/Successful_registration.jpg?raw=true)
+
+![Upper section of survey screen](assets/Mobile_App_Images/Survey/Survey.png?raw=true)
+![Lower section of survey screen](assets/Mobile_App_Images/Survey/Survey2.PNG?raw=true)
+
+![Adding item to list](assets/Mobile_App_Images/Main/Added_item.PNG?raw=true)
+![Log out pop up](assets/Mobile_App_Images/Main/Log_out.PNG?raw=true)
+![Modal box that opens when add item button is pressed](assets/Mobile_App_Images/Main/Main_modal.PNG?raw=true)
+![Pop up for when item is tapped to be removed](assets/Mobile_App_Images/Main/Remove_item.PNG?raw=true)
+![Main Screen](assets/Mobile_App_Images/Main/Main.PNG?raw=true)
