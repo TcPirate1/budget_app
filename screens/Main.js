@@ -5,7 +5,7 @@ import Other from './categories/Other';
 import Takeout from './categories/Takeout';
 import Transport from './categories/Transport';
 import { MaterialIcons } from '@expo/vector-icons';
-import { BudgetContext } from './create_context_file';
+import { BudgetContext } from './BudgetContext';
 
 const Tab = createMaterialBottomTabNavigator();
 
