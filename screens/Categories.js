@@ -14,8 +14,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function Categories() {
   const weeklyBudget = useContext(BudgetContext);
 
-  let budget = weeklyBudget;
-
   const [ModalVisibility, setModalVisibility] = useState(false);
 
   const toggleModal = () =>{
@@ -87,7 +85,7 @@ export default function Categories() {
     <SafeAreaView style={defaultStyles.flatlist}>
       <View style={{margin: Platform.OS === "android" ?'3%': 0, flexDirection:'row'}}>
         <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
-        <AppText>${budget}</AppText>
+        <AppText>${weeklyBudget}</AppText>
         </View>
         <View style={{flex:1, alignItems:'flex-end', justifyContent:'center'}}>
         <Logout/>
