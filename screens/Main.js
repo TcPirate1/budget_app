@@ -9,8 +9,8 @@ import { BudgetContext } from './BudgetContext';
 
 const Tab = createMaterialBottomTabNavigator();
 
-export default Main = ({route}) => (
-  <BudgetContext.Provider value={route.params.weeklyBudget}>
+export default Main = () => (
+  <BudgetContext.Provider value={weeklyBudget}>
   <Tab.Navigator screenOptions={{headerTitleAlign:'center'}} shifting={false}>
   <Tab.Screen name="Groceries" component={Groceries} options={{tabBarIcon: ()=>(<MaterialIcons name="shopping-cart" size={24} color="white" />)}}/>
   <Tab.Screen name="Transport" component={Transport} options={{tabBarIcon: ()=>(<MaterialIcons name="directions-car" size={24} color="white" />)}}/>
