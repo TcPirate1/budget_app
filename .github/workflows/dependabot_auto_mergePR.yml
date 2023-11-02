@@ -36,4 +36,4 @@ jobs:
           # By default, whenever dependabot raises a PR, it automatically assigns a label named "dependencies"
           # So, this action merges those PRs labelled "dependencies" only
           MERGE_LABELS: dependencies
-          MERGE_METHOD: automerge
+          MERGE_METHOD: merge
